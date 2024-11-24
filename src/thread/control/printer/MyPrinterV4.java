@@ -34,7 +34,9 @@ public class MyPrinterV4 {
         @Override
         public void run() {
             while (!Thread.interrupted()) {
+                System.out.println("!!!jobQueue = " + jobQueue);
                 if (jobQueue.isEmpty()) {
+                    System.out.println("양보");
                     Thread.yield(); // 큐가 없으면 양보
                     continue;
                 }
